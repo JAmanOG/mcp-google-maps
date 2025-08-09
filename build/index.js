@@ -8,14 +8,10 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { fetchTranistData, getGoogleMapsUserQuery } from "./helper.js";
-export const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || "AIzaSyAiXcqKxToLzxjPMVepSO3G8hworDmeCU0";
+export const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || "";
 if (!GOOGLE_MAPS_API_KEY) {
     console.error("GOOGLE_MAPS_API_KEY environment variable is not set.");
 }
-// const GOOGLE_MAPS_API_URL =
-//   "https://maps.googleapis.com/maps/api/directions/js?key=" +
-//   GOOGLE_MAPS_API_KEY +
-//   "&libraries=maps";
 const GOOGLE_MAPS_API_URL = "https://maps.googleapis.com/maps/api/directions/json";
 const GOOGLE_QUERY_MAPS_API_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 export const User_AGENT = "whatsapp-mcp-maps/1.0.0";
